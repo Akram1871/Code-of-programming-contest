@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define fast ios::sync_with_stdio(false);cin.tie(0);
+#define pq priority_queue<int, vector<int>, greater<int> >
+/* ///Extended Eucledian GCD algorithm
+int extendgcd(int a,int b,int &x,int &y)
+{
+    if(a==0){x=0;y=1;return b;}int x1,y1;int d=extendgcd(b%a,a,x1,y1);x=y1-(b/a)*x1;y=x1;return d;
+}*/
+typedef long long ll;
+using namespace std;
+
+int main()
+{
+    fast;
+    ll t,n,k;
+
+    cin>>t;
+    while(t--)
+    {
+        cin>>n>>k;
+        string s(n,'a');
+        for(int i=n-2;i>=0;i--)
+        {
+            if(k<=n-i-1)
+            {
+                s[i]='b';
+                s[n-k]='b';
+                break;
+            }
+            k-=(n-i-1);
+        }
+        cout<<s<<endl;
+    }
+}
+
